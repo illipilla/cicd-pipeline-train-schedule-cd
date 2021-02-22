@@ -28,8 +28,8 @@ pipeline {
                                     sshTransfer(
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
-                                        remoteDirectory: '/var/www/html',
-                                        execCommand: 'sudo /usr/bin/systemctl stop httpd && rm -rf /var/www/html/* && unzip /tmp/trainSchedule.zip -d /var/www/html/ && sudo /usr/bin/systemctl start httpd'
+                                        remoteDirectory: '/tmp',
+                                        execCommand: 'sudo /usr/bin/systemctl stop httpd && rm -rf /var/www/html/test/* && unzip /tmp/trainSchedule.zip -d /var/www/html/test/ && sudo /usr/bin/systemctl start httpd'
                                     )
                                 ]
                             )
